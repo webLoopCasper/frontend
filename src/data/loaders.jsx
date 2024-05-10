@@ -16,6 +16,7 @@ async function fetchData(url) {
     },
   };
 
+
   try {
     const response = await fetch(url,authToken ? headers : {});
     const data = await response.json();
@@ -27,18 +28,47 @@ async function fetchData(url) {
   }
 }
 
-export async function getHomepageData(){
+export async function getHomepageDataMeta(){
     const hompage = qs.stringify({
-        populate:{
-          button:{
-            populate:true
-      
-          }
-        },
+        populate:true,
     })
     
     let url = new URL("/api/forside",base);
     url.search = hompage;
+    let data = flattenAttributes(await fetchData(url.href));
+    return data;
+}
+
+export async function getHomepageData(){
+    const hompage = qs.stringify(
+    {
+        populate:{
+            ForsideBody:{
+                populate:{
+                    images:{
+                        fields: ["url"] 
+                    }
+                }
+            }
+        }
+    })
+    
+    let url = new URL("/api/forside",base);
+    url.search = hompage;
+    let data = flattenAttributes(await fetchData(url.href));
+    return data;
+}
+
+
+
+
+export async function getGlobalData(){
+    const global = qs.stringify({
+        populate:true,
+    })
+    
+    let url = new URL("/api/global",base);
+    url.search = global;
     let data = flattenAttributes(await fetchData(url.href));
     return data;
 }

@@ -3,6 +3,7 @@ import { getHomepageData } from '@/data/loaders';
 
 
 let data = await getHomepageData();
+
 console.log(data);
 
 export default function Home() {
