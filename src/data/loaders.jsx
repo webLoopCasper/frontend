@@ -46,12 +46,14 @@ export async function getHomepageData(){
             ForsideBody:{
                 populate:{
                     images:{
-                        fields: ["url"] 
+                        fields: ["url","alternativeText"] 
                     }
                 }
             }
         }
-    })
+    }
+  
+)
     
     let url = new URL("/api/forside",base);
     url.search = hompage;
