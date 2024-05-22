@@ -4,16 +4,15 @@ import { getHomepageDataMeta } from "@/data/loaders";
 
 const inter = Inter({ subsets: ["latin"] });
 
-
-export async function generateMetadata(){ // generateMetadata() is a next function
+export async function generateMetadata() {
+  // generateMetadata() is a next function
   const metadata = await getHomepageDataMeta();
- 
+
   return {
     title: metadata?.title,
     description: metadata.metaDescription,
   };
 }
-
 
 export default function RootLayout({ children }) {
   return (
@@ -23,7 +22,6 @@ export default function RootLayout({ children }) {
         {children}
         <p>footer</p>
       </body>
-      
     </html>
   );
 }
