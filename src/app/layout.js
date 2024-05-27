@@ -6,18 +6,19 @@ import Header from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 const fair = Playfair_Display({
-   subsets: ["latin"], 
-   variable: '--font-fair'
+  subsets: ["latin"],
+  variable: "--font-fair",
 });
 
 const mulish = Mulish({
-  subsets: ["latin"], 
-  variable: '--font-mulish'
+  subsets: ["latin"],
+  variable: "--font-mulish",
 });
 
-export async function generateMetadata(){ // generateMetadata() is a next function
+export async function generateMetadata() {
+  // generateMetadata() is a next function
   const metadata = await getHomepageDataMeta();
- 
+
   return {
     title: metadata?.title,
     description: metadata.metaDescription,
@@ -25,17 +26,14 @@ export async function generateMetadata(){ // generateMetadata() is a next functi
 }
 let global = await getGlobalData();
 
-
-
 export default function RootLayout({ children }) {
   return (
     <html lang="da">
       <body className={`${fair.variable} ${mulish.variable}`}>
-       <Header data={global.header}/>
+        <Header data={global.header} />
         {children}
-      <Footer/>
+        <Footer />
       </body>
-      
     </html>
   );
 }
