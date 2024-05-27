@@ -10,7 +10,9 @@ const nextConfig = {
           },
           {
             protocol: 'https',
-            hostname: 'placehold.co'
+            hostname: 'fruitful-power-f5942f95f8.media.strapiapp.com',
+            port:"",
+            pathname: '**',
           }
         ],
       },
