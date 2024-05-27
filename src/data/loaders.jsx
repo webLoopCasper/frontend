@@ -3,6 +3,7 @@ import qs from 'qs';
 import { flattenAttributes } from '@/lib/utils';
 import { getStrapiURL } from '@/lib/utils';
 
+
 let base = getStrapiURL();
 
 async function fetchData(url) {
@@ -47,13 +48,27 @@ export async function getHomepageData(){
                 populate:{
                     images:{
                         fields: ["url","alternativeText"] 
+                    },
+                    link:{
+                        populate:true
+                    },
+                    image:{
+                        fields: ["url","alternativeText"]
+                    },
+                    card:{
+                        populate:{
+                            image:{
+                                fields:["url","alternativeText"]
+                            }
+                        }
+                       
                     }
+
                 }
             }
         }
     }
-  
-)
+    )
     
     let url = new URL("/api/forside",base);
     url.search = hompage;
@@ -66,10 +81,62 @@ export async function getHomepageData(){
 
 export async function getGlobalData(){
     const global = qs.stringify({
-        populate:true,
+        populate:{
+            header:{
+                populate:{
+                    logoLink:{
+                        populate:true
+                    },
+                    contactLink:{
+                        populate:true
+                    }
+                }
+            }
+        }
     })
     
     let url = new URL("/api/global",base);
+    url.search = global;
+    let data = flattenAttributes(await fetchData(url.href));
+    return data;
+}
+
+
+
+
+export async function getOmOsData(){
+    const global = qs.stringify({
+        populate:{
+            omOsBody:{
+                populate:{
+                    image:{
+                        fields: ["url","alternativeText"]
+                    }
+                }
+            }
+        }
+    }) 
+    
+    
+    let url = new URL("/api/om-os",base);
+    url.search = global;
+    let data = flattenAttributes(await fetchData(url.href));
+    return data;
+}
+
+
+
+
+export async function getKontaktOsData(){
+    const global = qs.stringify({
+        populate:{
+            KontaktOsBody:{
+                populate:true
+            }
+        }
+    }) 
+    
+    let url = new URL("/api/kontakt-os",base);
     url.search = global;
     let data = flattenAttributes(await fetchData(url.href));
     return data;

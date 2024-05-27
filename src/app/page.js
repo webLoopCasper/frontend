@@ -1,22 +1,28 @@
 
 import { getHomepageData } from '@/data/loaders';
-import { StrapiImage } from '@/components/StrapiImage';
-
-
+import { Intro} from '@/components/Intro'
+import {ImageAndText} from '@/components/ImageAndText'
+import { CardSection } from '@/components/CardSection';
 let data = await getHomepageData();
 
-console.log(data);
-let url1 = data.ForsideBody[0].images.data[0].url;
-
-
+function blockRenderer(data) {
+  switch (data.__component) {
+    case "layout.image-and-text":
+      return <ImageAndText key={data.id} data={data} />;
+    case "layout.intro":
+      return <Intro key={data.id} data={data} />;
+    case "layout.card-section":
+      return <CardSection key={data.id} data={data} />;
+    default:
+      return null;
+  }  
+} 
 
 
 export default function Home() {
   return (
    <div>
-    <p>{data.id}</p>
-     <StrapiImage priority={true} height={200} src={url1} /> 
-
-   </div>
+     {data.ForsideBody.map(data => blockRenderer(data))}
+   </div> 
   );
 }

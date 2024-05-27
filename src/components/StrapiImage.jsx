@@ -13,7 +13,7 @@ export function StrapiImage({
   sizes
   
 }) {
-  if (!src) return null;
+  //if (!src) return null;
   const imageUrl = getStrapiMedia(src);
 
   const imageFallback = "/t-shirts.jpg";

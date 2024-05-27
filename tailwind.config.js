@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        desert: "#DBD7D3",
+        desert: "#DBD7D3", 
         bgcol: "#F8F6F4",
         sand: "#E0DFD5",
         softblack: "#212427",

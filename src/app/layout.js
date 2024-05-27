@@ -1,9 +1,19 @@
-import { Inter } from "next/font/google";
+import { Playfair_Display, Mulish } from "next/font/google";
 import "./globals.css";
 import { getHomepageDataMeta } from "@/data/loaders";
+import { getGlobalData } from "@/data/loaders";
+import Header from "@/components/Header";
+import { Footer } from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const fair = Playfair_Display({
+   subsets: ["latin"], 
+   variable: '--font-fair'
+});
 
+const mulish = Mulish({
+  subsets: ["latin"], 
+  variable: '--font-mulish'
+});
 
 export async function generateMetadata(){ // generateMetadata() is a next function
   const metadata = await getHomepageDataMeta();
@@ -13,15 +23,17 @@ export async function generateMetadata(){ // generateMetadata() is a next functi
     description: metadata.metaDescription,
   };
 }
+let global = await getGlobalData();
+
 
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <p>header</p>
+    <html lang="da">
+      <body className={`${fair.variable} ${mulish.variable}`}>
+       <Header data={global.header}/>
         {children}
-        <p>footer</p>
+      <Footer/>
       </body>
       
     </html>
