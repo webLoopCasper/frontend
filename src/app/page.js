@@ -3,6 +3,13 @@ import { Intro } from "@/components/Intro";
 import { ImageAndText } from "@/components/ImageAndText";
 import { CardSection } from "@/components/CardSection";
 let data = await getHomepageData();
+console.log(data);
+
+
+export const metadata = {
+  title: data.title,
+  description: data.metaDescription,
+}
 
 function blockRenderer(data) {
   switch (data.__component) {   
