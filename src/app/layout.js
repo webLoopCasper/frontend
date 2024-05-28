@@ -17,12 +17,12 @@ const mulish = Mulish({
 
 export async function generateMetadata() {
   // generateMetadata() is a next function
-  const metadata = await getHomepageDataMeta();
+  // const metadata = await getHomepageDataMeta();
 
-  return {
-    title: metadata?.title,
-    description: metadata.metaDescription,
-  };
+  // return {
+  //   title: metadata?.title,
+  //   description: metadata.metaDescription,
+  // };
 }
 let global = await getGlobalData();
 

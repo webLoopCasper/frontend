@@ -3,7 +3,11 @@ import { ContactSection } from "@/components/production/ContactSection";
 import { getKontaktOsData } from "@/data/loaders"
 
 let data = await getKontaktOsData();
-console.log(data); 
+
+export const metadata = {
+  title: data.title,
+  description: data.metaDescription,
+}
  
 function blockRenderer(data) {
     switch (data.__component) { 

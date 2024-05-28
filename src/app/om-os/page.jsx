@@ -6,6 +6,11 @@ import { getOmOsData } from "@/data/loaders"
 
  let data = await getOmOsData();
 
+ export const metadata = {
+  title: data.title,
+  description: data.metaDescription,
+}
+
  function blockRenderer(data) {
     switch (data.__component) { 
       case "layout.headliner":
