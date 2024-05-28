@@ -71,7 +71,7 @@ function Navigation({ isOpen, setIsOpen }) {
           <div className="px-4 transition-all cursor-pointer w-fit hover:translate-x-4 menu-link-item" key={page.url}>
             <div className="flex items-center menu-link-item-holder group ">
               <Link className="text-4xl sm:text-6xl " href={page.url}>
-                {page.link}
+                <button onClick={() => toggleTimeline()}>{page.link}</button>
               </Link>
               <div className="hidden transition-all sm:group-hover:block">
                 <Image src="./arrow-up-right.svg" width={40} height={40} />

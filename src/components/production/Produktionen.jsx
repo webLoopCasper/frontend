@@ -35,7 +35,7 @@ function Produktionen() {
   });
 
   return (
-    <section className=" big_image_container_2 px-2 h-[150vh] z-0 relative mb-10">
+    <section className=" big_image_container_2 px-2 h-[150vh] z-0 relative mb-12">
       <div className="m-4 big_image_text_2">
         <h2 className="pb-2 text-xl text-center md:text-2xl fair">
           4. <br /> Produktion

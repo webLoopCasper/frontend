@@ -34,7 +34,7 @@ function Design() {
   });
 
   return (
-    <section className=" big_image_container px-2 h-[200vh]">
+    <section className=" big_image_container px-2 mb-12 h-[200vh]">
       <div className="m-4 big_image_text">
         <h2 className="pb-2 text-xl text-center md:text-2xl fair">
           2. <br /> Design og valg af materialer
