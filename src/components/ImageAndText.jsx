@@ -6,7 +6,7 @@ import { StrapiImage } from "./StrapiImage";
 export function ImageAndText({data}){
     return( 
          
-         <div className={ `bg-${data.backgroundColor}`}>   
+         <div className={data.backgroundColor}>   
             <div className=" py-16 max-w-screen-lg px-4 sm:px-12 mx-auto">
                 <div className="md:flex"> 
                     <div className="md:w-3/6 mb-8">

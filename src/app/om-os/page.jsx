@@ -7,7 +7,7 @@ import { getOmOsData } from "@/data/loaders"
  let data = await getOmOsData();
 
  function blockRenderer(data) {
-    switch (data.__component) {
+    switch (data.__component) { 
       case "layout.headliner":
         return <Headliner key={data.id} data={data} />;
       case "layout.image-and-text":

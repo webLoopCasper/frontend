@@ -5,7 +5,7 @@ export default function Header({data}){
         <header className="border-b border-softgrey">
         <div className="flex justify-between content-center flex-wrap max-w-screen-lg h-16  px-4 sm:px-12 mx-auto">
             <a href={data.logoLink.url}>
-                {data.logoLink.text}
+                {data.logoLink.text} 
             </a>
             <div className="flex">
                 <a className="flex border-r border-softgrey" href={data.contactLink.url}>

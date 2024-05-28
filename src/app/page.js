@@ -5,7 +5,7 @@ import { CardSection } from "@/components/CardSection";
 let data = await getHomepageData();
 
 function blockRenderer(data) {
-  switch (data.__component) {
+  switch (data.__component) {   
     case "layout.image-and-text":
       return <ImageAndText key={data.id} data={data} />;
     case "layout.intro":

@@ -131,7 +131,11 @@ export async function getKontaktOsData(){
     const global = qs.stringify({
         populate:{
             KontaktOsBody:{
-                populate:true
+                populate:{
+                    image:{
+                        fields: ["url","alternativeText"]
+                    }
+                }
             }
         }
     }) 

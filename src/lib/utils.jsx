@@ -2,8 +2,8 @@
 
 
 export function getStrapiURL() {
-    // return process.env.NEXT_PUBLIC_STRAPI_URL ?? "http://127.0.0.1:1337";
-    return "https://fruitful-power-f5942f95f8.strapiapp.com/"
+    return process.env.NEXT_PUBLIC_STRAPI_URL ?? "http://127.0.0.1:1337";
+    //return "https://fruitful-power-f5942f95f8.strapiapp.com/"
 
   }
 
