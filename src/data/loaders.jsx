@@ -90,6 +90,14 @@ export async function getGlobalData() {
           }
         }
       },
+      footerSection:{
+        populate: {
+          footerLink:{
+            populate:true
+          }
+        }
+      },
+
     },
   });
 

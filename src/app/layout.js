@@ -16,14 +16,14 @@ const mulish = Mulish({
 
 
 let global = await getGlobalData();
-
+ 
 export default function RootLayout({ children }) {
   return (
     <html lang="da">  
       <body className={`${fair.variable} ${mulish.variable}`}>
         <Header data={global} />
         {children}
-        <Footer />
+        <Footer data={global.footerSection}/>
       </body>
     </html>
   );

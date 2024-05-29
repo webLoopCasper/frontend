@@ -1,8 +1,7 @@
 
 
-export function Footer(){
-
-
+export function Footer({data}){
+    console.log(data);
     return(
         <div>
              <div className="   border-b border-t border-softblack ">
@@ -25,15 +24,14 @@ export function Footer(){
             </div>
             <div className="sm:flex max-w-screen-lg py-8 px-4 sm:px-12 mx-auto">
             <div className="flex flex-wrap sm:w-3/6">
-                        <a className=" hover:underline font-bold border-b  border-softblack py-16 text-center block w-3/6" href="">Produktion</a>
-                        <a className="hover:underline font-bold border-b border-l  border-softblack py-16 text-center block w-3/6" href="">Team</a>
-                        <a className="hover:underline font-bold py-16 text-center block w-3/6" href="">Om os</a>
-                        <a className="hover:underline font-bold py-16 border-l border-softblack text-center block w-3/6" href="">Kontakt os</a> 
+                        <a className=" hover:underline font-bold border-b  border-softblack py-16 text-center block w-3/6" href={data.footerLink[0].url}>{data.footerLink[0].text}</a>
+                        <a className="hover:underline font-bold border-b border-l  border-softblack py-16 text-center block w-3/6" href={data.footerLink[1].url}>{data.footerLink[1].text}</a>
+                        <a className="hover:underline font-bold py-16 text-center block w-3/6" href={data.footerLink[2].url}>{data.footerLink[2].text}</a>
+                        <a className="hover:underline font-bold py-16 border-l border-softblack text-center block w-3/6" href={data.footerLink[3].url}>{data.footerLink[3].text}</a> 
             </div>
             <div className="sm:pl-8 max-w-screen-lg py-4 sm:w-3/6 ">
-                       <p className="fair text-2xl pb-4" >Information</p>
-                       <p>Når din virksomhed skal have produceret kræver det en produktion som er pålidelig kvalitets bevidste og ambiøste
-Når din virksomhed skal have produceret kræver det en produktion som er pålidelig kvalitets bevidste og ambiøsteNår din virksomhed skal have produceret kræver det en produktion som er pålidelig kvalitets bevidste og ambiøste</p>
+                       <p className="fair text-2xl pb-4" >{data.headline}</p>
+                       <p>{data.description}</p>
             </div>
 
             </div>

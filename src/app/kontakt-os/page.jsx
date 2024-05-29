@@ -16,7 +16,7 @@ function blockRenderer(data) {
       case "layout.contact-section": 
         return <ContactSection key={data.id} data={data} />;
       default:
-        return null;
+        return null; 
     }  
   } 
 

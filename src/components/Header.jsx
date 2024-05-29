@@ -14,7 +14,7 @@ export default function Header({ data }) {
           </a>
           <Burger data={data.navigationSection} />
         </div>
-      </div>
+      </div>   
     </header>
   );
 }
