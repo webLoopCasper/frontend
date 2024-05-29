@@ -7,7 +7,8 @@ import { gsap } from "gsap/gsap-core";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 
-function Navigation({ isOpen, setIsOpen }) {
+function Navigation({ data, isOpen, setIsOpen }) {
+  console.log(data.navLink);
   const naviLinks = [
     {
       link: "Forside",
@@ -67,11 +68,11 @@ function Navigation({ isOpen, setIsOpen }) {
         </button>
       </div>
       <div className="flex flex-col justify-end max-w-4xl gap-12 mx-auto menu-copy">
-        {naviLinks.map((page) => (
+        {data.navLink.map((page) => (
           <div className="px-4 transition-all cursor-pointer w-fit hover:translate-x-4 menu-link-item" key={page.url}>
             <div className="flex items-center menu-link-item-holder group ">
               <Link className="text-4xl sm:text-6xl " href={page.url}>
-                <button onClick={() => toggleTimeline()}>{page.link}</button>
+                <button onClick={() => toggleTimeline()}>{page.text}</button>
               </Link>
               <div className="hidden transition-all sm:group-hover:block">
                 <Image src="./arrow-up-right.svg" width={40} height={40} />

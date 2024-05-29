@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Navigation from "./Navigation";
 
-function Burger() {
+function Burger({data}) {
+  
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -14,7 +15,7 @@ function Burger() {
         <span className="w-8 h-0.5 bg-softblack block "></span>
       </button>
 
-      {isOpen === true ? <Navigation isOpen={isOpen} setIsOpen={setIsOpen} /> : ""}
+      {isOpen === true ? <Navigation data={data} isOpen={isOpen} setIsOpen={setIsOpen} /> : ""}
     </div>
   );
 }

@@ -83,6 +83,13 @@ export async function getGlobalData() {
           },
         },
       },
+      navigationSection:{
+        populate: {
+          navLink:{
+            populate:true
+          }
+        }
+      },
     },
   });
 
