@@ -4,11 +4,13 @@ import Image from "next/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { StrapiImage } from "../StrapiImage";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
 
-function Design() {
+function Design({data}) {
+  console.log(data);  
   useGSAP(() => {
     const mm = gsap.matchMedia();
 
@@ -37,13 +39,13 @@ function Design() {
     <section className=" big_image_container px-2 mb-12 h-[175vh]">
       <div className="m-4 big_image_text">
         <h2 className="pb-2 text-xl text-center md:text-2xl fair">
-          2. <br /> Design og valg af materialer
+          2. <br /> {data.headline}
         </h2>
-        <p className=" max-w-[600px] mx-auto">Sammen med os finder vi frem til de materialer som jeres produkt være bedst i. Vi finder frem til hvad jeres design ville se godt ud på og hvad der giver det bedste mulige resultat.</p>
+        <p className=" max-w-[600px] mx-auto">{data.description}</p>
       </div>
 
       <div className="max-w-[800px] mx-auto big_image">
-        <Image src={"/t-shirts.jpg"} width={1600} height={900} />
+        <StrapiImage src={data.image.url} width={1600} height={900} />
       </div>
     </section>
   );

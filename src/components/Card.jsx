@@ -1,7 +1,6 @@
 import { StrapiImage } from "./StrapiImage";
 
 export function Card({data}){
-console.log(data);
 
     return(
         <div>

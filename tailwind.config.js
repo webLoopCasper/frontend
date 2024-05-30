@@ -8,6 +8,7 @@ module.exports = {
         bgcol: "#F8F6F4",
         sand: "#E0DFD5",
         softblack: "#212427",
+        softblue:"#435058"
       },
     },
   },

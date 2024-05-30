@@ -2,7 +2,6 @@ import { StrapiImage } from "@/components/StrapiImage";
 import { ButtonLink } from "./ButtonLink";
 
 export function Intro({data}) {
-   console.log(data); 
    
   const headline = data.headline.split(" "); 
     return (

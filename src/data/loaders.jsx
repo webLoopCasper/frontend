@@ -144,3 +144,88 @@ export async function getKontaktOsData() {
   let data = flattenAttributes(await fetchData(url.href));
   return data;
 }
+
+
+export async function getTeamData() {
+  const global = qs.stringify({
+    populate: {
+      TeamBody:{
+        populate:{
+          image: {
+            fields: ["url", "alternativeText"],
+          },
+        }
+      }
+    },
+  });
+
+  let url = new URL("/api/team", base);
+  url.search = global;
+  let data = flattenAttributes(await fetchData(url.href));
+  return data;
+}
+
+export async function getProduktionData() {
+  const global = qs.stringify({
+    populate: {
+      ProduktionBody :{
+        populate:{
+          production1:{
+            populate:{
+              image1: {
+                fields: ["url", "alternativeText"],
+              },
+              image2: {
+                fields: ["url", "alternativeText"],
+              },
+            }
+          },
+          production2:{
+            populate:{
+              image: {
+                fields: ["url", "alternativeText"],
+              },
+              
+            }
+          },
+          production3:{
+            populate:{
+              image1: {
+                fields: ["url", "alternativeText"],
+              },
+              image2: {
+                fields: ["url", "alternativeText"],
+              },
+              
+            }
+          },
+          production4:{
+            populate:{
+              image: {
+                fields: ["url", "alternativeText"],
+              },
+              
+            }
+          },
+          contact:{
+            populate:{
+              image: {
+                fields: ["url", "alternativeText"],
+              },
+              link:{
+                populate:true
+              }
+              
+            }
+          }
+
+        }
+      }
+    },
+  });
+
+  let url = new URL("/api/produktion ", base);
+  url.search = global;
+  let data = flattenAttributes(await fetchData(url.href));
+  return data;
+}

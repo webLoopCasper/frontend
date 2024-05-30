@@ -1,7 +1,6 @@
 import { StrapiImage } from "../StrapiImage";
 
-export function ContactSection({data}){
-    console.log(data);   
+export function ContactSection({data}){  
     return(
         <div className={ ''}>   
         <div className=" py-16 max-w-screen-lg px-4 sm:px-12 mx-auto">
@@ -15,12 +14,7 @@ export function ContactSection({data}){
                     <p className="fair font-bold mb-2 text-sm">{data.phone}</p>
                     <p className="fair font-bold mb-6 text-sm">{data.mail}</p>
                     <p className="mb-2 text-sm">{data.text}</p>
-                 
-                    
                 </div>
-                
-                     
-                
             </div>
         </div>
     </div>

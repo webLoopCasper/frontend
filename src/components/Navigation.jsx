@@ -8,30 +8,7 @@ import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 
 function Navigation({ data, isOpen, setIsOpen }) {
-  console.log(data.navLink);
-  const naviLinks = [
-    {
-      link: "Forside",
-      url: "/",
-    },
-    {
-      link: "Om os",
-      url: "/omos",
-    },
-    {
-      link: "Production",
-      url: "/production",
-    },
-    {
-      link: "Teamet",
-      url: "/teamet",
-    },
-    {
-      link: "Kontakt",
-      url: "/kontakt",
-    },
-  ];
-
+ 
   const container = useRef();
 
   const tl = useRef();

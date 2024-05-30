@@ -1,7 +1,6 @@
 
 
 export function Footer({data}){
-    console.log(data);
     return(
         <div>
              <div className="   border-b border-t border-softblack ">
