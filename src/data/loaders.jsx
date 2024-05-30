@@ -83,21 +83,20 @@ export async function getGlobalData() {
           },
         },
       },
-      navigationSection:{
+      navigationSection: {
         populate: {
-          navLink:{
-            populate:true
-          }
-        }
+          navLink: {
+            populate: true,
+          },
+        },
       },
-      footerSection:{
+      footerSection: {
         populate: {
-          footerLink:{
-            populate:true
-          }
-        }
+          footerLink: {
+            populate: true,
+          },
+        },
       },
-
     },
   });
 
@@ -145,17 +144,16 @@ export async function getKontaktOsData() {
   return data;
 }
 
-
 export async function getTeamData() {
   const global = qs.stringify({
     populate: {
-      TeamBody:{
-        populate:{
+      TeamBody: {
+        populate: {
           image: {
             fields: ["url", "alternativeText"],
           },
-        }
-      }
+        },
+      },
     },
   });
 
@@ -168,59 +166,57 @@ export async function getTeamData() {
 export async function getProduktionData() {
   const global = qs.stringify({
     populate: {
-      ProduktionBody :{
-        populate:{
-          production1:{
-            populate:{
+      ProduktionBody: {
+        populate: {
+          production1: {
+            populate: {
               image1: {
                 fields: ["url", "alternativeText"],
               },
               image2: {
                 fields: ["url", "alternativeText"],
               },
-            }
+            },
           },
-          production2:{
-            populate:{
+          production2: {
+            populate: {
               image: {
                 fields: ["url", "alternativeText"],
               },
-              
-            }
+            },
           },
-          production3:{
-            populate:{
+          production3: {
+            populate: {
               image1: {
                 fields: ["url", "alternativeText"],
               },
               image2: {
                 fields: ["url", "alternativeText"],
               },
-              
-            }
+            },
           },
-          production4:{
-            populate:{
+          production4: {
+            populate: {
               image: {
                 fields: ["url", "alternativeText"],
               },
-              
-            }
+            },
           },
-          contact:{
-            populate:{
+          contact: {
+            populate: {
               image: {
                 fields: ["url", "alternativeText"],
               },
-              link:{
-                populate:true
-              }
-              
-            }
-          }
-
-        }
-      }
+              link: {
+                populate: true,
+              },
+            },
+          },
+          image: {
+            fields: ["url", "alternativeText"],
+          },
+        },
+      },
     },
   });
 

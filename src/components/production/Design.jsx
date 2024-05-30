@@ -9,8 +9,8 @@ import { StrapiImage } from "../StrapiImage";
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
 
-function Design({data}) {
-  console.log(data);  
+function Design({ data }) {
+  console.log(data);
   useGSAP(() => {
     const mm = gsap.matchMedia();
 
@@ -45,7 +45,7 @@ function Design({data}) {
       </div>
 
       <div className="max-w-[800px] mx-auto big_image">
-        <StrapiImage src={data.image.url} width={1600} height={900} />
+        <Image src={data.image.url} width={1600} height={900} />
       </div>
     </section>
   );

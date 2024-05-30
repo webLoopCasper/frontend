@@ -8,24 +8,22 @@ import { getProduktionData } from "@/data/loaders";
 import { Headliner } from "@/components/Headliner";
 
 let data = await getProduktionData();
- 
-function page() { 
+
+function page() {
+  console.log(data.ProduktionBody);
   return (
     <div className="text-black bg-bgcol ">
       <section className="mb-20">
-        <h1 className="text-center text-black">
-          En rejse med <br /> J. Anthony production
-        </h1>
-         {/* <Headliner data={data.ProduktionBody[0]}/>    */}
+        <Headliner data={data.ProduktionBody[1]} />
         <div className="w-3/4 mx-auto sm:w-2/3">
-          <Image src={"/t-shirts.jpg"} width={1600} height={900} priority={true} />
+          <Image src={data.ProduktionBody[2].image.url} width={1600} height={900} priority={true} />
         </div>
       </section>
-      <Samtale data={data.ProduktionBody[1].production1}/>
-      <Design data={data.ProduktionBody[1].production2}/>
-      <Samples />
-      <Produktionen />
-      <Kontakt />
+      <Samtale data={data.ProduktionBody[0].production1} />
+      <Design data={data.ProduktionBody[0].production2} />
+      <Samples data={data.ProduktionBody[0].production3} />
+      <Produktionen data={data.ProduktionBody[0].production4} />
+      <Kontakt data={data.ProduktionBody[0].contact} />
     </div>
   );
 }
