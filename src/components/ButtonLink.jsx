@@ -3,7 +3,7 @@ import Link from "next/link";
 export function ButtonLink({ href, text, appearance }) {
   return (
     // <Link className={`px-8 py-2 inline-block border ${appearance == "black background white text"? " bg-softblack text-bgcol":"border-softblack"}`} href={href}>{text}</Link>
-    <Link className="flex w-[150px] px-8 py-2 outline-2 outline-softblack bg-softblack text-bgcol align-center justify-center group" href={{ href }}>
+    <Link className="flex w-[150px] px-8 py-2 outline-2 outline-softblack bg-softblack text-bgcol align-center justify-center group" href={href}>
       <div className="relative">
         {text}
         <div className="absolute right-[-30px] w-6 h-6 px-1 m-0 transition-all rotate-45 opacity-0 group-hover:opacity-100 top-[50%]  group-hover:right-[-20px] translate-y-[-30%]">
