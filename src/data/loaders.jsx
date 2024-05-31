@@ -1,4 +1,4 @@
-import { unstable_noStore as noStore } from "next/cache";
+// import { unstable_noStore as noStore } from "next/cache";
 import qs from "qs";
 import { flattenAttributes } from "@/lib/utils";
 import { getStrapiURL } from "@/lib/utils";
@@ -6,7 +6,7 @@ import { getStrapiURL } from "@/lib/utils";
 let base = getStrapiURL();
 
 async function fetchData(url) {
-  noStore();
+  // noStore();
   const authToken = null; // we will implement this later getAuthToken() later
   const headers = {
     method: "GET",

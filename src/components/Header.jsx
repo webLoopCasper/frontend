@@ -4,11 +4,11 @@ import Burger from "./Burger";
 export default function Header({ data }) {
      
   return (
-    <header className="z-20 border-b border-softgrey">
+    <header className="z-20 border-b border-softblack">
       <div className="flex flex-wrap content-center justify-between h-16 max-w-screen-lg px-4 mx-auto sm:px-12">
         <a href={data.header.logoLink.url}>{data.header.logoLink.text}</a>
         <div className="flex">
-          <a className="flex border-r border-softgrey" href={data.header.contactLink.url}>
+          <a className="flex border-r pr-1 border-softblack" href={data.header.contactLink.url}>
             {data.header.contactLink.text}
             <Image src="./arrow-up-right.svg" width={20} height={20} />
           </a>

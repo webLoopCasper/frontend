@@ -8,7 +8,7 @@ function Burger({data}) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div>
+    <div className="pt-1">
       <button className="ml-2" onClick={() => setIsOpen(!isOpen)}>
         <span className="w-8 h-0.5 bg-softblack block mb-1.5"></span>
         <span className="w-8 h-0.5 bg-softblack block mb-1.5"></span>
