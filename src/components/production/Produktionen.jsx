@@ -42,7 +42,7 @@ function Produktionen({ data }) {
         <p className=" max-w-[600px] mx-auto">{data.description}</p>
       </div>
       <div className="max-w-[800px] mx-auto big_image_2">
-        <Image src={data.image.url} width={1600} height={900} />
+        <Image src={data.image.url} width={1600} height={900} sizes="100vw" />
       </div>
     </section>
   );

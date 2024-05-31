@@ -45,7 +45,7 @@ function Design({ data }) {
       </div>
 
       <div className="max-w-[800px] mx-auto big_image">
-        <Image src={data.image.url} width={1600} height={900} />
+        <Image src={data.image.url} width={1600} height={900} sizes="100vw" />
       </div>
     </section>
   );

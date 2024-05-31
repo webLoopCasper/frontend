@@ -16,7 +16,7 @@ function page() {
       <section className="mb-20">
         <Headliner data={data.ProduktionBody[1]} />
         <div className="w-3/4 mx-auto sm:w-2/3">
-          <Image src={data.ProduktionBody[2].image.url} width={1600} height={900} priority={true} />
+          <Image src={data.ProduktionBody[2].image.url} width={1600} height={900} priority={true} sizes="100vw" />
         </div>
       </section>
       <Samtale data={data.ProduktionBody[0].production1} />
