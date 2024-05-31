@@ -9,6 +9,12 @@ import { Headliner } from "@/components/Headliner";
 
 let data = await getProduktionData();
 
+export const metadata = {
+  title: data.title,
+  description: data.metaDescription,
+}
+
+
 function page() {
   console.log(data.ProduktionBody);
   return (
